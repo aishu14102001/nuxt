@@ -1,6 +1,8 @@
 // nuxt.config.ts
 import { defineNuxtConfig } from 'nuxt/config'
 
+require('dotenv').config();
+
 export default defineNuxtConfig({
   modules: [
     '@vite-pwa/nuxt'
@@ -34,7 +36,11 @@ export default defineNuxtConfig({
           sizes: "512x512",
           type: "image/png"
         }
-      ],
+      ], 
+    },
+    workbox:{
+      navigateFallback:"/",
+
     },
     devOptions: {
       enabled: true, //PWA features are active during development , that why we are using true
@@ -42,3 +48,5 @@ export default defineNuxtConfig({
     },
   }
 })
+
+
